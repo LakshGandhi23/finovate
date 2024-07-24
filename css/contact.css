@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(#44899b, #72e2ed);
+  display: flex;
+  flex-direction: column; /* Make the body a column container */
+  align-items: center;
+  overflow: hidden;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background.png) center center / cover no-repeat fixed;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+nav {
+  position: relative;
+  width: 524px;
+  height: 50px;
+  background: #222;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+nav a {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  color: #fff;
+  text-decoration: none;
+  padding: 0 23px;
+  z-index: 1;
+}
+nav span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 95px;
+  height: 100%;
+  background: linear-gradient(45deg, #2e3192, #1bffff);
+  border-radius: 8px;
+  transition: 0.5s ease;
+}
+nav a:nth-child(1):hover ~ span {
+  left: 0;
+}
+nav a:nth-child(2):hover ~ span {
+  left: 95px;
+}
+nav a:nth-child(3):hover ~ span {
+  left: 189px;
+  width: 110px;
+}
+nav a:nth-child(4):hover ~ span {
+  left: 298px;
+  width: 115px;
+}
+nav a:nth-child(5):hover ~ span {
+  left: 413px;
+  width: 110px;
+}
+nav .start-contact {
+  left: 413px;
+  width: 110px;
+}
+.logo {
+  display: block;
+  width: 8rem;
+}
+
+.night {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: rotateZ(140deg);
+  z-index: 2;
+}
+
+.shooting_star {
+  position: absolute;
+  left: 80%;
+  top: 80%;
+  height: 2px;
+  background: linear-gradient(-45deg, #ffffff, rgba(255, 255, 255, 0));
+  border-radius: 999px;
+  filter: drop-shadow(0 0 6px #699bff);
+  animation: tail 4000ms ease-in-out infinite,
+    shooting 4000ms ease-in-out infinite;
+}
+
+.shooting_star::before,
+.shooting_star::after {
+  content: "";
+  position: absolute;
+  top: calc(50% - 1px);
+  right: 0;
+  height: 2px;
+  background: linear-gradient(-45deg, #72e2ed, #ffffff, #72e2ed);
+  transform: translateX(50%) rotateZ(45deg);
+  border-radius: 100%;
+  animation: shining 3000ms ease-in-out infinite;
+}
+
+.shooting_star::after {
+  transform: translateX(50%) rotateZ(-45deg);
+}
+
+.shooting_star:nth-child(1) {
+  top: calc(25% - -37px);
+  left: calc(25% - 14px);
+  animation-delay: 8000ms;
+}
+
+.shooting_star:nth-child(1)::before,
+.shooting_star:nth-child(1)::after {
+  animation-delay: 8000ms;
+}
+
+.shooting_star:nth-child(2) {
+  top: calc(65% - 43px);
+  left: calc(65% - 317px);
+  animation-delay: 5000ms;
+}
+
+.shooting_star:nth-child(2)::before,
+.shooting_star:nth-child(2)::after {
+  animation-delay: 5000ms;
+}
+
+@keyframes tail {
+  0% {
+    width: 0;
+  }
+  30% {
+    width: 100px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shining {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 30px;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes shooting {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container form {
+  width: 670px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  flex-wrap: wrap;
+  padding: 20px;
+  margin-top: 210px;
+}
+
+.container form h1 {
+  color: #fff;
+  font-weight: 500;
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+.container form input,
+.container form textarea {
+  width: 290px;
+  height: 40px;
+  padding-left: 10px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  margin-bottom: 10px;
+  background: none;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+
+.container form input::placeholder,
+.container form textarea::placeholder {
+  color: #ddd;
+}
+
+.container form #lastName,
+.container form #mobile {
+  margin-left: 20px;
+}
+
+.container form h4 {
+  color: #fff;
+  font-weight: 300;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container form textarea {
+  min-width: 600px;
+  max-width: 600px;
+  min-height: 80px;
+  max-height: 80px;
+}
+
+textarea::-webkit-scrollbar {
+  width: 1em;
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgba(194, 194, 194, 0.713);
+}
+
+.container form #button {
+  border: none;
+  background: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  color: #333;
+  width: 100px;
+  padding: 0;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.container form #button:hover {
+  opacity: 0.7;
+}
